@@ -4,8 +4,8 @@ import "./QuizView.css";
 const QuizView = ({ questions, currentQuestion, handleAnswerClick }) => {
   return (
     <>
-      <div className="question">
-        <div className="question-number">
+      <div className="flex flex-col items-center">
+        <div className="font-black text-smalt-blue-500 text-xl">
           <span>
             Question {currentQuestion + 1} / {questions.length}
           </span>
@@ -15,10 +15,14 @@ const QuizView = ({ questions, currentQuestion, handleAnswerClick }) => {
         </div>
       </div>
 
-      <div className="answer">
+      <div className="flex flex-col justify-between gap-5 w-72">
         {questions[currentQuestion].answers.map(({ text, isCorrect }) => (
-          <button key={text} onClick={() => handleAnswerClick(isCorrect)}>
-            {text}
+          <button
+            className="bg-monte-carlo-500 hover:bg-hippie-blue-500 active:bg-smalt-blue-700 focus:outline-none focus:ring focus:ring-violet-300"
+            key={text}
+            onClick={() => handleAnswerClick(isCorrect)}
+          >
+            <p className="text-white">{text}</p>
           </button>
         ))}
       </div>

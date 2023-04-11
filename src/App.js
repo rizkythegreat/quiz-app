@@ -69,7 +69,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="flex flex-col justify-evenly items-center min-h-min p-8 rounded-xl bg-gradient-to-b from-emerald-100 from-10% via-monte-carlo-500 via-30% to-smalt-blue-500 to-90%">
       {isQuizOver ? (
         <ScoreView handleResetClick={handleResetClick} score={score} />
       ) : (
